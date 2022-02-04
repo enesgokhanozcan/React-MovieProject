@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 
 const IMG_API = "http://image.tmdb.org/t/p/w500/";
@@ -16,6 +16,7 @@ const useStyles = makeStyles({
   },
 });
 export default function MovieCard({
+  id,
   title,
   overview,
   vote_average,
@@ -51,7 +52,7 @@ export default function MovieCard({
           >
             {overview}
           </Typography>
-          <Link href="">read more</Link>
+          <Link to={`/movieDetail/${id}`}>read more...</Link>
         </CardContent>
         <CardActions>
           <Typography className={classes.root}>Rate:{vote_average}</Typography>

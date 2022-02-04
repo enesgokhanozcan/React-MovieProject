@@ -3,7 +3,7 @@ import Header from "./component/Header";
 import MovieDetail from "./component/MovieDetail";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import { Routes, Route,Switch} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/movieDetail" element={<MovieDetail/>}/>
+        <Route path="/movieDetail/:id" element={<MovieDetail/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>

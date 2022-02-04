@@ -3,6 +3,7 @@ import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return <div>
@@ -10,7 +11,7 @@ export default function Header() {
         <Toolbar>
           <LocalMoviesIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Movie
+            <Link to="/">Movie</Link>
           </Typography>
         </Toolbar>
       </AppBar>
