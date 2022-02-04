@@ -3,22 +3,34 @@ import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import { Link } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 const IMG_API = "http://image.tmdb.org/t/p/w500/";
 
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+    textAlign: "center",
+  },
+});
 export default function MovieCard({
   title,
   overview,
   vote_average,
   poster_path,
 }) {
+  const classes = useStyles();
   return (
     <div>
       <Card>
-        <CardMedia component="img" image={IMG_API + poster_path} alt="title" />
+        <CardMedia
+          component="img"
+          image={IMG_API + poster_path}
+          alt="title"
+          height="450"
+        />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography
             overflow="hidden"
@@ -39,11 +51,10 @@ export default function MovieCard({
           >
             {overview}
           </Typography>
-          <Link size="small">read more</Link>
+          <Link href="">read more</Link>
         </CardContent>
         <CardActions>
-          <Button size="small">View</Button>
-          <Button size="small">Edit</Button>
+          <Typography className={classes.root}>Rate:{vote_average}</Typography>
         </CardActions>
       </Card>
     </div>
