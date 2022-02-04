@@ -2,14 +2,19 @@ import "./App.css";
 import Header from "./component/Header";
 import MovieDetail from "./component/MovieDetail";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import { Routes, Route,Switch} from "react-router-dom";
 
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Home/>
-      <MovieDetail/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/movieDetail" element={<MovieDetail/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
     </div>
   );
 }
