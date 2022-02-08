@@ -26,11 +26,10 @@ export default function MovieDetail() {
   }, []);
   return (
     <div>
-      <Container sx={{ py: 8}} maxWidth="md">
+      <Container sx={{ py: 8 }} maxWidth="md">
         <Grid container spacing={3}>
           <Grid item xs={4} sm={6} md={6}>
-            <Card
-            >
+            <Card>
               <CardMedia
                 component="img"
                 image={IMG_API + detail.poster_path}
@@ -39,14 +38,18 @@ export default function MovieDetail() {
             </Card>
           </Grid>
           <Grid item xs={8} sm={6} md={6}>
-            <Card sx={{ maxWidth: 345 }} >
+            <Card sx={{ maxWidth: 345 }}>
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant="h5" component="h2" display="inline" align="right">
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  display="inline"
+                  align="right"
+                >
                   {detail.title}
                 </Typography>
-                <Typography>
-                  {detail.overview}
-                </Typography>
+                <Typography>{detail.overview}</Typography>
               </CardContent>
             </Card>
           </Grid>
