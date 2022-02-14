@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import axios from "axios";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -30,6 +31,10 @@ export default function Login() {
       email: data.email,
       password: data.password,
     });
+    axios.post("http://localhost:3000/user/login", userData)
+        .then((response) => {
+            console.log(response.data.token)
+        });
   };
   return (
     <Container component="main" maxWidth="xs">
